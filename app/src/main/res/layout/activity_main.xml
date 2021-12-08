@@ -67,7 +67,8 @@
             android:id="@+id/radioButtonCelsius"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/celsius" />
+            android:text="@string/celsius"
+            android:textColor="#616161" />
     </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
