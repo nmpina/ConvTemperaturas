@@ -4,20 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginStart="@dimen/margem_actividade"
-    android:layout_marginLeft="@dimen/margem_actividade"
-    android:layout_marginTop="@dimen/margem_actividade"
-    android:layout_marginEnd="@dimen/margem_actividade"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margem_actividade"
+        android:layout_marginTop="@dimen/margem_actividade"
+        android:layout_marginEnd="@dimen/margem_actividade"
         android:background="@color/cor_info"
+        android:padding="@dimen/padding_textviews"
         android:text="@string/temperatura"
         android:textAlignment="center"
         android:textColor="@color/cor_texto_info"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,12 +27,47 @@
         android:id="@+id/editTextTemperatura"
         android:layout_width="0dp"
         android:layout_height="48dp"
+        android:background="@color/cor_input"
         android:ems="10"
         android:hint="@string/temperatura"
-        android:inputType="number"
+        android:inputType="numberSigned|number"
         app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textViewUnidades"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margem_campos"
+        android:background="@color/cor_info"
+        android:text="@string/unidades"
+        android:textAlignment="center"
+        android:textColor="@color/cor_texto_info"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTemperatura"
+        app:layout_constraintStart_toStartOf="@+id/editTextTemperatura"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTemperatura" />
+
+    <RadioGroup
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/cor_input"
+        app:layout_constraintEnd_toEndOf="@+id/textViewUnidades"
+        app:layout_constraintStart_toStartOf="@+id/textViewUnidades"
+        app:layout_constraintTop_toBottomOf="@+id/textViewUnidades">
+
+        <RadioButton
+            android:id="@+id/radioButtonFahrenheit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fahrenheit" />
+
+        <RadioButton
+            android:id="@+id/radioButtonCelsius"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/celsius" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
